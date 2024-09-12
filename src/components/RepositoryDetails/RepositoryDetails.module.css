@@ -1,0 +1,127 @@
+.detailsWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #1b112e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 60rem;
+}
+
+.filesSection,
+.commitsSection {
+    width: 100%;
+    background-color: #2e1e47;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 1rem;
+}
+
+.filesSection h3,
+.commitsSection h3 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.filesSection ul,
+.commitsSection ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.filesSection li,
+.commitsSection li {
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.filesSection li:hover,
+.commitsSection li:hover {
+    background-color: #1b112e;
+}
+
+.fileContent {
+    margin-top: 20px;
+    background-color: #2e1e47; /* Darker background for contrast */
+    border: 1px solid #3e2e5a; /* Border for differentiation */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px;
+    color: #f8f8f8;
+    font-family: "Courier New", Courier, monospace; /* Monospaced font for code */
+}
+
+.fileContent h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.fileContent pre {
+    background-color: #1b112e;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    max-height: 400px; 
+    line-height: 1.5;
+    font-size: 0.9rem;
+    color: #dcdcdc; 
+}
+
+.fileContent pre::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.fileContent pre::-webkit-scrollbar-thumb {
+    background-color: #6c4f8f;
+    border-radius: 4px;
+}
+
+.backButton {
+    background-color: #2e1e47;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    height: 3rem;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.backButton:hover {
+    background-color: #777;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.toggleButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.toggleButton {
+    background-color: #2e1e47;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 48%;
+    transition: background-color 0.3s;
+}
+
+.toggleButton:hover {
+    background-color: #777;
+}
+
+.active {
+    background-color: #2e1e47;
+}

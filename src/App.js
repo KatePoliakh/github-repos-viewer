@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { ApolloProvider } from '@apollo/client';
+import client from './graphql/client';
+import Profile from './components/Profile/Profile'; // Updated import to use Profile
+import Header from './components/Header/Header';
+import Message from './components/Message/Message';
+import RepositoryDetails from './components/RepositoryDetails/RepositoryDetails'; // Updated import to use RepositoryDetails
 
 function App() {
+  const [username, setUsername] = useState('');
+  const [selectedRepo, setSelectedRepo] = useState(null); // To store the selected repo for details
+
+  const handleSearch = (query) => {
+    setUsername(query.trim());
+    // Clear selectedRepo when searching for a new user
+    setSelectedRepo(null);
+  };
+
+  const handleDetailsClick = (owner, repoName) => {
+    setSelectedRepo({ owner, repoName });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <Header onSearch={handleSearch} />
+      {/* Show the start message when there's no username */} 
+      {!username && !selectedRepo && <Message text="Please enter a username to search for repositories." />}
+      
+      {username && !selectedRepo && <Profile username={username} onDetailsClick={handleDetailsClick} />}
+      {selectedRepo && (
+        <RepositoryDetails owner={selectedRepo.owner} name={selectedRepo.repoName} />
+      )}
+    </ApolloProvider>
   );
 }
 

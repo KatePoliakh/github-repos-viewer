@@ -1,0 +1,12 @@
+.messageWrapper {
+  background-color: #2e1e47;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  

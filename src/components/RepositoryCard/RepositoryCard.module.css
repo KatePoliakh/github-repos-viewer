@@ -1,0 +1,69 @@
+.card {
+  position: relative; /* Ensure the dropdown is positioned relative to the card */
+  background-color: #2e1e47;
+  border-radius: 8px;
+  padding: 16px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #555;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardTitle {
+  font-size: 20px;
+  color: white;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  color: yellow;
+}
+
+.starIcon {
+  margin-left: 8px;
+  width: 20px;
+  height: 20px;
+}
+
+.description {
+  color: white;
+  margin-top: 10px;
+}
+
+.dropdown {
+  display: none; /* Hide the dropdown by default */
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  width: 150px;
+  top: 100%; /* Position it below the card */
+  left: 0;   /* Align it with the left edge of the card */
+}
+
+.card:hover .dropdown {
+  display: flex; /* Show the dropdown on hover */
+}
+
+.dropdown button {
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown button:hover {
+  background-color: #f0f0f0;
+}
