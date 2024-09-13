@@ -4,9 +4,9 @@ import ProfileInformation from '../ProfileInformation/ProfileInformation';
 import RepositoryList from '../RepositoryList/RepositoryList';
 import styles from './Profile.module.css';
 import Message from '../Message/Message';
-import RepositoryDetails from '../RepositoryDetails/RepositoryDetails'; // Import RepositoryDetails
+import RepositoryDetails from '../RepositoryDetails/RepositoryDetails';
 
-// Define the GraphQL query to get profile and repositories
+
 const GET_PROFILE_AND_REPOSITORIES = gql`
   query GetProfileAndRepositories($login: String!) {
     user(login: $login) {
@@ -35,22 +35,21 @@ const Profile = ({ username, onDetailsClick }) => {
     skip: !username, // Skip the query if no username is provided
   });
 
-  const [selectedRepo, setSelectedRepo] = useState(null); // Track selected repository
-
+  const [selectedRepo, setSelectedRepo] = useState(null);
 
   const handleDetailsClick = (owner, name) => {
-    setSelectedRepo({ owner, name }); // Set the selected repository when "See Details" is clicked
+    setSelectedRepo({ owner, name });
   };
 
   const handleBackClick = () => {
-    setSelectedRepo(null); // Reset the selected repository to go back to the list
+    setSelectedRepo(null);
   };
 
-  console.log(data); // Add this to inspect the returned data
 
-  if (loading) return <Message text="Loading..." />; // Show loading message
-  if (error) return <Message text={`Error: ${error.message}`} />; // Show error message
-  if (!data?.user) return <Message text="No data found for the provided username." />; // Show no data message
+
+  if (loading) return <Message text="Loading..." />;
+  if (error) return <Message text={`Error: ${error.message}`} />;
+  if (!data?.user) return <Message text="No data found for the provided username." />;
 
   const { avatarUrl, name, login, followers, repositories } = data.user;
 

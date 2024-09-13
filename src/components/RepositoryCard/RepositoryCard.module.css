@@ -1,5 +1,5 @@
 .card {
-  position: relative; /* Ensure the dropdown is positioned relative to the card */
+  position: relative;
   background-color: #2e1e47;
   border-radius: 8px;
   padding: 16px;
@@ -39,7 +39,7 @@
 }
 
 .dropdown {
-  display: none; /* Hide the dropdown by default */
+  display: none;
   flex-direction: column;
   background-color: white;
   border: 1px solid #ddd;
@@ -48,12 +48,12 @@
   position: absolute;
   z-index: 1;
   width: 150px;
-  top: 100%; /* Position it below the card */
-  left: 0;   /* Align it with the left edge of the card */
+  top: 100%;
+  left: 0;
 }
 
 .card:hover .dropdown {
-  display: flex; /* Show the dropdown on hover */
+  display: flex;
 }
 
 .dropdown button {

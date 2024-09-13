@@ -3,8 +3,8 @@
     color: white;
     text-align: center;
     padding: 20px;
-    width: 100vw; /* Full width */
-    height: 100vh; /* Full height */
+    width: 100vw;
+    height: 100vh;
     position: relative;
     left: 50%;
     transform: translateX(-50%);

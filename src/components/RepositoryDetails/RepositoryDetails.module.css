@@ -45,13 +45,13 @@
 
 .fileContent {
     margin-top: 20px;
-    background-color: #2e1e47; /* Darker background for contrast */
-    border: 1px solid #3e2e5a; /* Border for differentiation */
+    background-color: #2e1e47;
+    border: 1px solid #3e2e5a;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     color: #f8f8f8;
-    font-family: "Courier New", Courier, monospace; /* Monospaced font for code */
+    font-family: "Courier New", Courier, monospace;
 }
 
 .fileContent h3 {

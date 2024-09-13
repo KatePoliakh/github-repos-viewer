@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import styles from './RepositoryDetails.module.css';
 
-// Define the GraphQL query to fetch the repository's file structure and commit history
 const GET_REPO_DETAILS = gql`
   query GetRepoDetails($owner: String!, $name: String!, $path: String!) {
     repository(owner: $owner, name: $name) {
@@ -61,7 +60,6 @@ const RepositoryDetails = ({ owner, name, onBack }) => {
 
   const handleFileClick = (file) => {
     if (file.type === 'tree') {
-      // Update the path to go into the directory
       setPath(`HEAD:${file.name}`);
     } else if (file.type === 'blob' && file.object && file.object.text) {
       setFileContent(file.object.text);
@@ -71,8 +69,8 @@ const RepositoryDetails = ({ owner, name, onBack }) => {
   };
 
   const handleBackToRoot = () => {
-    setPath('HEAD:');  // Go back to the root of the repository
-    setFileContent(null);  // Clear file content when navigating back
+    setPath('HEAD:');
+    setFileContent(null);
   };
 
   return (

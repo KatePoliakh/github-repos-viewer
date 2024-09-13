@@ -20,8 +20,7 @@ function Header({ onSearch }) {
         onChange={handleInputChange}
         placeholder="Search for repositories"
       />
-      {/* Remove the button as search is triggered automatically on input change */}
-    </header>
+      </header>
   );
 }
 

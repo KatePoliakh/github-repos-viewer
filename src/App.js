@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { ApolloProvider } from '@apollo/client';
 import client from './graphql/client';
-import Profile from './components/Profile/Profile'; // Updated import to use Profile
+import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
 import Message from './components/Message/Message';
-import RepositoryDetails from './components/RepositoryDetails/RepositoryDetails'; // Updated import to use RepositoryDetails
+import RepositoryDetails from './components/RepositoryDetails/RepositoryDetails';
 
 function App() {
   const [username, setUsername] = useState('');
-  const [selectedRepo, setSelectedRepo] = useState(null); // To store the selected repo for details
+  const [selectedRepo, setSelectedRepo] = useState(null);
 
   const handleSearch = (query) => {
     setUsername(query.trim());
-    // Clear selectedRepo when searching for a new user
+
     setSelectedRepo(null);
   };
 

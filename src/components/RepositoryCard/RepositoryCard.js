@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './RepositoryCard.module.css'; // Importing CSS module
+import styles from './RepositoryCard.module.css';
 
 const RepositoryCard = ({ name, description, starsCount, url, onDetailsClick }) => {
   return (
